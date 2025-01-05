@@ -5,8 +5,8 @@ import "./Header.css";
 const Header = () => {
     return (
         <header className="header">
-            <h1>Football Stats</h1>
-            <nav>
+            <div className="logo">Football Stats</div>
+            <nav className="nav-links">
                 <ul>
                     <li><Link to="/">Home</Link></li>
                     <li><Link to="/players">Players</Link></li>
@@ -17,6 +17,7 @@ const Header = () => {
                     <li><Link to="/coaches">Coaches</Link></li>
                 </ul>
             </nav>
+            <button className="cta-button">Become a Member</button>
         </header>
     );
 };
