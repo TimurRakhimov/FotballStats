@@ -16,7 +16,6 @@ const App = () => {
                         <AppRoutes />
                     </main>
                 </div>
-                <Footer />
             </div>
         </Router>
     );
