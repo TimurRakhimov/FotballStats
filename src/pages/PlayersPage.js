@@ -14,10 +14,13 @@ const PLayersPage = () => {
 
     }, []);
 
-    if (squad.length === 0) { // Check if squad is empty
-        return <h1>Loading...</h1>;
-    }
-
+    if (!squad.length)
+        return (
+            <div className="loading-container">
+                <div className="spinner"></div>
+                <p>Loading Players...</p>
+            </div>
+        ); 
     return (
     <div>
         <PlayerList squad={squad} />
