@@ -10,7 +10,7 @@ export const fetchFixtures = async () => {
     } 
 
     try {
-        const response = await fetch('/api/v4/teams/86/matches?dateFrom=2024-08-18&dateTo=2025-05-25', {
+        const response = await fetch('/api/v3/teams/86/matches?dateFrom=2024-08-18&dateTo=2025-05-25', {
             method: 'GET',
             headers: {
                 'X-Auth-Token': 'c625dda22c0341c6b7ad3874162e1d37',

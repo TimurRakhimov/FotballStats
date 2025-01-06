@@ -13,7 +13,7 @@
      border-radius: 10px;
      margin-bottom: 20px;
      padding: 20px;
-     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Smooth shadow */
+     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
      display: flex;
      flex-direction: column;
      gap: 10px;
@@ -69,10 +69,115 @@
  
  /* Competition Logo */
  .competition-logo img {
-     width: 48px;
-     height: 48px;
+     width: 24px;
+     height: 24px;
      object-fit: contain;
      border-radius: 5px;
-     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for logo */
+ }
+ 
+/* Dropdown Toggle Button */
+.dropdown-toggle {
+     background: none;
+     color: #007bff;
+     border: none;
+     font-size: 14px;
+     cursor: pointer;
+     margin-top: 10px;
+     padding: 5px 10px;
+     transition: color 0.3s ease, text-decoration 0.3s ease;
+     font-weight: bold;
+ }
+ 
+ .dropdown-toggle:hover {
+     color: #0056b3; /* Slightly darker blue on hover */
+     text-decoration: underline; /* Add underline on hover */
+ }
+ 
+ /* Optional: Adjust button alignment */
+ .dropdown-toggle-container {
+     display: flex;
+     justify-content: flex-end; /* Align button to the right */
+     margin-top: 10px;
+ }
+ 
+ 
+ /* Dropdown Content */
+ .dropdown-content {
+     margin-top: 10px;
+     padding: 15px;
+     background: #f9f9f9;
+     border: 1px solid #e0e0e0;
+     border-radius: 5px;
+     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+     font-size: 14px;
+     color: #333;
+     animation: dropdown-slide 0.3s ease-out; /* Smooth slide-down effect */
+ }
+ 
+ /* Dropdown Slide Animation */
+ @keyframes dropdown-slide {
+     from {
+         opacity: 0;
+         transform: translateY(-10px);
+     }
+     to {
+         opacity: 1;
+         transform: translateY(0);
+     }
+ }
+ 
+ .dropdown-content p {
+     margin: 5px 0;
+     line-height: 1.5;
+ }
+ 
+ /* Loading Container */
+ .loading-container {
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     align-items: center;
+     height: 100vh; /* Full screen height */
+     background-color: #f8fbff;
+ }
+ 
+ /* Spinner Animation */
+ .spinner {
+     width: 50px;
+     height: 50px;
+     border: 5px solid #c4e0f4;
+     border-top: 5px solid #007bff;
+     border-radius: 50%;
+     animation: spin 1s linear infinite;
+     margin-bottom: 20px;
+ }
+ 
+ /* Spinner Animation Keyframes */
+ @keyframes spin {
+     0% {
+         transform: rotate(0deg);
+     }
+     100% {
+         transform: rotate(360deg);
+     }
+ }
+ 
+ /* Loading Text */
+ .loading-container p {
+     font-size: 18px;
+     color: #007bff;
+     font-weight: bold;
+     margin: 0;
+     animation: fadeIn 1s ease-in-out infinite;
+ }
+ 
+ /* Fade-In Effect for Loading Text */
+ @keyframes fadeIn {
+     0%, 100% {
+         opacity: 1;
+     }
+     50% {
+         opacity: 0.5;
+     }
  }
  
