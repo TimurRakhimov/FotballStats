@@ -16,7 +16,7 @@ const App = () => {
                         <AppRoutes />
                     </main>
                 </div>
-                <Footer />
+                {/*<Footer /> */}
             </div>
         </Router>
     );

@@ -1,0 +1,46 @@
+/* Entire player list container */
+.player-list {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+    background-color: #f9fafb;
+  }
+  
+  /* Section for each position */
+  .position-section {
+    margin-bottom: 40px;
+  }
+  
+  /* Position title styling */
+  .position-title {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #1e293b;
+    margin-bottom: 16px;
+    text-transform: capitalize;
+    text-align: left;
+    border-left: 6px solid #2563eb;
+    padding-left: 10px;
+  }
+  
+  /* Container for player cards */
+  .player-cards-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 16px;
+    justify-content: center;
+    align-items: start;
+  }
+  
+  /* Responsive adjustments for smaller screens */
+  @media (max-width: 768px) {
+    .player-cards-container {
+      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    }
+  
+    .position-title {
+      font-size: 1.5rem;
+    }
+  }
+  
