@@ -10,7 +10,7 @@ export const fetchPlayers = async () => {
     }
 
     try {
-        const response = await fetch('/api/v4/teams/86', {
+        const response = await fetch('/api/v3/teams/86', {
             method: 'GET',
             headers: {
                 'X-Auth-Token': 'c625dda22c0341c6b7ad3874162e1d37',
