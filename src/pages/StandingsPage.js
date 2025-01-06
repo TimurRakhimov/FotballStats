@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { fetchPlayers } from "../features/standings/standingsAPI";
+import { fetchStandings } from "../features/standings/standingsAPI";
 import "./StandingsPage.css"; // Import the CSS file for styling
 
 const StandingsPage = () => {
@@ -8,7 +8,7 @@ const StandingsPage = () => {
     useEffect(() => {
         const getData = async () => {
             try {
-                const response = await fetchPlayers();
+                const response = await fetchStandings();
                 const table = response.standings[0]?.table || [];
                 setStandingsInfo(table);
             } catch (error) {
