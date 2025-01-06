@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { fetchStandings } from "../features/standings/standingsAPI";
-import "./StandingsPage.css"; // Import the CSS file for styling
+import "./StandingsPage.css";
 
 const StandingsPage = () => {
     const [standingsInfo, setStandingsInfo] = useState([]);
@@ -9,7 +9,7 @@ const StandingsPage = () => {
     useEffect(() => {
         const getData = async () => {
             try {
-                const response = await fetchStandings();
+                const response = await fetchStandings(selectedLeague); // Pass the selected league
                 const table = response.standings[0]?.table || [];
                 setStandingsInfo(table);
             } catch (error) {
@@ -17,7 +17,7 @@ const StandingsPage = () => {
             }
         };
         getData();
-    }, [selectedLeague]);
+    }, [selectedLeague]); // Fetch data whenever selectedLeague changes
 
     if (!standingsInfo.length)
         return (
@@ -25,34 +25,27 @@ const StandingsPage = () => {
                 <div className="spinner"></div>
                 <p>Loading Standings...</p>
             </div>
-        );    
+        );
 
     return (
         <div className="standings-page">
             <div className="league-container">
                 <h1 className="page-title">League Table</h1>
                 <div className="league-tabs">
-                    <button 
-                        className={`tab-button ${selectedLeague === "PD" ? "active" : ""}`} 
+                    <button
+                        className={`tab-button ${selectedLeague === "PD" ? "active" : ""}`}
                         onClick={() => setLeague("PD")}
                     >
                         La Liga
                     </button>
-                    <button 
-                        className={`tab-button ${selectedLeague === "CL" ? "active" : ""}`} 
+                    <button
+                        className={`tab-button ${selectedLeague === "CL" ? "active" : ""}`}
                         onClick={() => setLeague("CL")}
                     >
                         UEFA Champions League
                     </button>
-                    <button 
-                        className={`tab-button ${selectedLeague === "CDR" ? "active" : ""}`} 
-                        onClick={() => setLeague("CDR")}
-                    >
-                        Copa del Rey
-                    </button>
                 </div>
             </div>
-
 
             <table className="standings-table">
                 <thead>
@@ -71,7 +64,10 @@ const StandingsPage = () => {
                 </thead>
                 <tbody>
                     {standingsInfo.map((team) => (
-                        <tr key={team.team.id}>
+                        <tr 
+                        key={team.team.id}
+                        className={team.team.name === "Real Madrid CF" ? "highlight-row" : ""}
+                        >
                             <td>{team.position}</td>
                             <td className="team-column">
                                 <img src={team.team.crest} alt={team.team.name} className="team-logo" />

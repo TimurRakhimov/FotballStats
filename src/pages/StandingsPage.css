@@ -166,3 +166,14 @@
     color: #1e3a8a;
     border-color: #1e3a8a; /* Subtle underline */
 }
+
+/* Add higher specificity */
+table.standings-table tr.highlight-row {
+    background-color: #8dc6ff; /* Red highlight */
+    font-weight: bold; /* Optional */
+}
+
+/* Ensure normal text and logo colors are applied */
+table.standings-table tr.highlight-row td {
+    color: #333; /* Standard text color */
+}
