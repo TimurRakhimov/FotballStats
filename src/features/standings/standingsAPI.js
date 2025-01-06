@@ -7,7 +7,7 @@ export const fetchStandings = async () => {
     if (cache[cacheKey]) {
         console.log("Using cached standings data");
         return cache[cacheKey];
-    }
+    } 
 
     try {
         const response = await fetch('/api/v4/competitions/PD/standings', {

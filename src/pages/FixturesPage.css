@@ -1,0 +1,78 @@
+/* Fixtures Page */
+.fixtures-page {
+     font-family: Arial, sans-serif;
+     padding: 20px;
+     max-width: 1200px;
+     margin: 20px auto;
+     background: #ffffff;
+ }
+ 
+ /* Fixture Card */
+ .fixture-card {
+     background: white;
+     border-radius: 10px;
+     margin-bottom: 20px;
+     padding: 20px;
+     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Smooth shadow */
+     display: flex;
+     flex-direction: column;
+     gap: 10px;
+ }
+ 
+ /* Fixture Date */
+ .fixture-date {
+     font-size: 16px;
+     font-weight: bold;
+     color: #444;
+     margin-bottom: 10px;
+ }
+ 
+ /* Fixture Details */
+ .fixture-details {
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+ }
+ 
+ /* Teams Section */
+ .teams {
+     display: flex;
+     align-items: center;
+     gap: 20px;
+ }
+ 
+ /* Team */
+ .team {
+     display: flex;
+     align-items: center;
+     gap: 10px;
+     font-size: 14px;
+     font-weight: bold;
+     color: #333;
+ }
+ 
+ /* Team Logo */
+ .team-logo {
+     width: 32px;
+     height: 32px;
+     object-fit: contain;
+ }
+ 
+ /* Score */
+ .score {
+     font-size: 16px;
+     font-weight: bold;
+     color: #444;
+     display: flex;
+     gap: 5px;
+ }
+ 
+ /* Competition Logo */
+ .competition-logo img {
+     width: 48px;
+     height: 48px;
+     object-fit: contain;
+     border-radius: 5px;
+     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for logo */
+ }
+ 
