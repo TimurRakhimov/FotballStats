@@ -115,4 +115,54 @@
      font-weight: bold;
      margin: 0;
  }
- 
+
+/* League Container */
+.league-container {
+    text-align: center;
+    padding: 20px 0;
+    background-color: #ffffff; /* Soft background */
+}
+
+/* Page Title */
+.page-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #0f172a; /* Dark navy text */
+    margin-bottom: 20px;
+    font-family: "Inter", sans-serif;
+}
+
+/* League Tabs */
+.league-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    border-bottom: 1px solid #e1e6eb; /* Light separator */
+    margin-bottom: 10px;
+}
+
+/* Tab Button */
+.tab-button {
+    padding: 10px 25px;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #64748b; /* Light gray text */
+    background: none;
+    border: none;
+    border-bottom: 3px solid transparent; /* Transparent for spacing */
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: "Inter", sans-serif;
+}
+
+/* Active Tab */
+.tab-button.active {
+    color: #1e3a8a; /* Bold blue for active */
+    border-color: #1e3a8a; /* Underline active */
+}
+
+/* Hover Effect */
+.tab-button:hover {
+    color: #1e3a8a;
+    border-color: #1e3a8a; /* Subtle underline */
+}

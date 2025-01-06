@@ -4,6 +4,7 @@ import "./StandingsPage.css"; // Import the CSS file for styling
 
 const StandingsPage = () => {
     const [standingsInfo, setStandingsInfo] = useState([]);
+    const [selectedLeague, setLeague] = useState("PD"); // Default to La Liga
 
     useEffect(() => {
         const getData = async () => {
@@ -16,7 +17,7 @@ const StandingsPage = () => {
             }
         };
         getData();
-    }, []);
+    }, [selectedLeague]);
 
     if (!standingsInfo.length)
         return (
@@ -28,6 +29,31 @@ const StandingsPage = () => {
 
     return (
         <div className="standings-page">
+            <div className="league-container">
+                <h1 className="page-title">League Table</h1>
+                <div className="league-tabs">
+                    <button 
+                        className={`tab-button ${selectedLeague === "PD" ? "active" : ""}`} 
+                        onClick={() => setLeague("PD")}
+                    >
+                        La Liga
+                    </button>
+                    <button 
+                        className={`tab-button ${selectedLeague === "CL" ? "active" : ""}`} 
+                        onClick={() => setLeague("CL")}
+                    >
+                        UEFA Champions League
+                    </button>
+                    <button 
+                        className={`tab-button ${selectedLeague === "CDR" ? "active" : ""}`} 
+                        onClick={() => setLeague("CDR")}
+                    >
+                        Copa del Rey
+                    </button>
+                </div>
+            </div>
+
+
             <table className="standings-table">
                 <thead>
                     <tr>
