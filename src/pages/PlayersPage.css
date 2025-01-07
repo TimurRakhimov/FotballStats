@@ -1,38 +1,75 @@
- /* Loading Container */
- .loading-container {
-     display: flex;
-     flex-direction: column;
-     justify-content: center;
-     align-items: center;
-     height: 100vh; /* Full screen height */
-     background-color: #ffffff; /* Light blue background for contrast */
- }
- 
- /* Spinner Animation */
- .spinner {
-     width: 50px;
-     height: 50px;
-     border: 5px solid #c4e0f4; /* Light border */
-     border-top: 5px solid #007bff; /* Blue border for animation */
-     border-radius: 50%;
-     animation: spin 1s linear infinite;
-     margin-bottom: 20px;
- }
- 
- /* Spinner Animation Keyframes */
- @keyframes spin {
-     0% {
-         transform: rotate(0deg);
-     }
-     100% {
-         transform: rotate(360deg);
-     }
- }
- 
- /* Loading Text */
- .loading-container p {
-     font-size: 16px;
-     color: #007bff; /* Blue text */
-     font-weight: bold;
-     margin: 0;
- }
+/* Players Page */
+.players-page {
+    font-family: Arial, sans-serif;
+    max-width: 1200px;
+    margin: 10px auto;
+    background: #ffffff;
+}
+
+/* Players Container */
+.players-container {
+    text-align: center;
+    padding: 5px 0;
+    background-color: #ffffff; /* Soft background */
+    border-bottom: 1px solid #e1e6eb;
+    margin-bottom: 10px;
+}
+
+/* Page Title */
+.page-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #0f172a; /* Dark navy text */
+    margin-bottom: 20px;
+    font-family: "Inter", sans-serif;
+}
+
+/* Loading Container */
+.loading-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full screen height */
+    background-color: #f8fbff;
+}
+
+/* Spinner Animation */
+.spinner {
+    width: 50px;
+    height: 50px;
+    border: 5px solid #c4e0f4;
+    border-top: 5px solid #007bff;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin-bottom: 20px;
+}
+
+/* Spinner Animation Keyframes */
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Loading Text */
+.loading-container p {
+    font-size: 18px;
+    color: #007bff;
+    font-weight: bold;
+    margin: 0;
+    animation: fadeIn 1s ease-in-out infinite;
+}
+
+/* Fade-In Effect for Loading Text */
+@keyframes fadeIn {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+}

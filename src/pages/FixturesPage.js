@@ -32,6 +32,9 @@ const FixturesPage = () => {
 
     return (
         <div className="fixtures-page">
+                <div className="fixtures-container">
+                    <h1 className="page-title">Fixtures</h1>
+                </div>
             {fixturesInfo.map((match) => (
                 <div key={match.id} className="fixture-card">
                     <div className="fixture-date">

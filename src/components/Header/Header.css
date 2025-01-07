@@ -13,7 +13,7 @@
 
 /* Logo styling */
 .logo {
-    font-family: "Georgia", serif;
+    font-family: "Inter", sans-serif;
     font-size: 1.8rem;
     font-weight: bold;
 }
@@ -32,6 +32,7 @@
     color: white;
     font-size: 1rem;
     transition: color 0.3s ease;
+    font-family: "Inter", sans-serif;
 }
 
 .nav-links a:hover {
@@ -49,6 +50,7 @@
     color: white;
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.2s ease;
+    font-family: "Inter", sans-serif;
 }
 
 .cta-button:hover {
