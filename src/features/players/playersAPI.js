@@ -1,6 +1,4 @@
 const cache = {}; // In-memory cache
-const proxyURL = "https://thingproxy.freeboard.io/fetch/";
-const apiURL = "https://api.football-data.org/v3/teams/86";
 
 export const fetchPlayers = async () => {
     const cacheKey = 'team-86'; // Unique key for this request
@@ -13,7 +11,7 @@ export const fetchPlayers = async () => {
 
     try {
         const response = await fetch(
-            `${proxyURL}${apiURL}`,
+            `https://cors-anywhere.herokuapp.com/https://api.football-data.org/v3/teams/86`,
             {
               method: "GET",
               headers: {
