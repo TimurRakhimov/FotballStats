@@ -1,3 +1,6 @@
+const cache = {}; // Simple in-memory cache
+
+
 export const fetchPlayers = async () => {
     const cacheKey = 'team-86'; // Unique key for this request
 
