@@ -15,7 +15,9 @@ const Header = () => {
                     <li><Link to="/statistics">Top Scorers</Link></li>
                 </ul>
             </nav>
-            <button className="cta-button">Become a Member</button>
+            <a href="https://www.realmadrid.com/en-US">
+            <button className="cta-button">Official Website</button>
+            </a>
         </header>
     );
 };

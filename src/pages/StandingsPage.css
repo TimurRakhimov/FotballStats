@@ -67,7 +67,7 @@
  /* Hover Effect */
  .standings-table tbody tr:hover {
      background-color: #dfeeff; /* Subtle blue hover */
-     cursor: pointer;
+     cursor: default;
  }
  
  /* Position Column */
