@@ -12,7 +12,7 @@ const Header = () => {
                     <li><Link to="/players">Players</Link></li>
                     <li><Link to="/standings">Standings</Link></li>
                     <li><Link to="/fixtures">Fixtures</Link></li>
-                    <li><Link to="/statistics">Statistics</Link></li>
+                    <li><Link to="/statistics">Top Scorers</Link></li>
                 </ul>
             </nav>
             <button className="cta-button">Become a Member</button>

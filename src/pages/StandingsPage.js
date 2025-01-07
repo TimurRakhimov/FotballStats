@@ -44,7 +44,7 @@ const StandingsPage = () => {
                     >
                         UEFA Champions League
                     </button>
-                </div>
+                </div> 
             </div>
 
             <table className="standings-table">

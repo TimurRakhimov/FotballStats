@@ -168,7 +168,7 @@
 
 /* Add higher specificity */
 table.standings-table tr.highlight-row {
-    background-color: #8dc6ff; /* Red highlight */
+    background-color: #8dc6ff;
     font-weight: bold; /* Optional */
 }
 

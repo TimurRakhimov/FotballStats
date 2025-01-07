@@ -1,24 +1,179 @@
+/* Statistics Page */
 .statistics-page {
      font-family: Arial, sans-serif;
      max-width: 1200px;
      margin: 10px auto;
-     background: #ffffff;
+     background: white; /* Slightly lighter for contrast */
+     border-radius: 15px;
  }
  
- /* Players Container */
- .statistics-container {
-     text-align: center;
-     padding: 5px 0;
-     background-color: #ffffff; /* Soft background */
-     border-bottom: 1px solid #e1e6eb;
-     margin-bottom: 10px;
+ /* Standings Table */
+ .statistics-table {
+     width: 100%;
+     border-collapse: collapse;
+     background-color: #f8fbff; /* Soft blue background to blend with page */
+     border-radius: 15px;
+     overflow: hidden;
+     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
  }
  
- /* Page Title */
- .page-title {
-     font-size: 2.5rem;
+ /* Table Header */
+ .statistics-table thead {
+     background-color: #eaf2fb; /* Light blue-gray for headers */
+     text-transform: uppercase;
      font-weight: bold;
-     color: #0f172a; /* Dark navy text */
-     margin-bottom: 20px;
-     font-family: "Inter", sans-serif;
+     font-size: 14px;
+     color: #333;
  }
+ 
+ .statistics-table th {
+     padding: 12px;
+     text-align: center;
+     border-bottom: 1px solid #d0e4f4; /* Subtle border */
+ }
+ 
+ /* Table Rows */
+ .statistics-table td {
+     padding: 12px;
+     text-align: center;
+     font-size: 14px;
+     color: #444;
+ }
+ 
+ /* Team Column */
+ .team-column {
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     gap: 10px;
+     text-align: left;
+ }
+ 
+ .team-logo {
+     width: 24px;
+     height: 24px;
+     /*border-radius: 50%; */
+     object-fit: contain;
+ }
+ 
+ /* Alternating Row Colors */
+ .statistics-table tbody tr:nth-child(odd) {
+     background-color: #f9f9f9; /* Light gray for contrast */
+ }
+ 
+ .statistics-table tbody tr:nth-child(even) {
+     background-color: #ffffff; /* Pure white rows */
+ }
+ 
+ /* Hover Effect */
+ .statistics-table tbody tr:hover {
+     background-color: #dfeeff; /* Subtle blue hover */
+     cursor: pointer;
+ }
+ 
+ /* Position Column */
+ .statistics-table td:first-child {
+     font-weight: bold;
+     color: #333;
+ }
+
+ /* Loading Container */
+.loading-container {
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     align-items: center;
+     height: 100vh; /* Full screen height */
+     background-color: #ffffff; /* Light blue background for contrast */
+ }
+ 
+ /* Spinner Animation */
+ .spinner {
+     width: 50px;
+     height: 50px;
+     border: 5px solid #c4e0f4; /* Light border */
+     border-top: 5px solid #007bff; /* Blue border for animation */
+     border-radius: 50%;
+     animation: spin 1s linear infinite;
+     margin-bottom: 20px;
+ }
+ 
+ /* Spinner Animation Keyframes */
+ @keyframes spin {
+     0% {
+         transform: rotate(0deg);
+     }
+     100% {
+         transform: rotate(360deg);
+     }
+ }
+ 
+ /* Loading Text */
+ .loading-container p {
+     font-size: 16px;
+     color: #007bff; /* Blue text */
+     font-weight: bold;
+     margin: 0;
+ }
+
+/* League Container */
+.league-container {
+    text-align: center;
+    padding: 5px 0;
+    background-color: #ffffff; /* Soft background */
+}
+
+/* Page Title */
+.page-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #0f172a; /* Dark navy text */
+    margin-bottom: 20px;
+    font-family: "Inter", sans-serif;
+}
+
+/* League Tabs */
+.league-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    border-bottom: 1px solid #e1e6eb; /* Light separator */
+    margin-bottom: 10px;
+}
+
+/* Tab Button */
+.tab-button {
+    padding: 10px 25px;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #64748b; /* Light gray text */
+    background: none;
+    border: none;
+    border-bottom: 3px solid transparent; /* Transparent for spacing */
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: "Inter", sans-serif;
+}
+
+/* Active Tab */
+.tab-button.active {
+    color: #1e3a8a; /* Bold blue for active */
+    border-color: #1e3a8a; /* Underline active */
+}
+
+/* Hover Effect */
+.tab-button:hover {
+    color: #1e3a8a;
+    border-color: #1e3a8a; /* Subtle underline */
+}
+
+/* Add higher specificity */
+table.statistics-table tr.highlight-row {
+    background-color: #8dc6ff;
+    font-weight: bold; /* Optional */
+}
+
+/* Ensure normal text and logo colors are applied */
+table.statistics-table tr.highlight-row td {
+    color: #333; /* Standard text color */
+}
