@@ -39,6 +39,39 @@
      font-size: 14px;
      color: #444;
  }
+
+  /* Standings Table */
+  .statistics-mobile {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #f8fbff; /* Soft blue background to blend with page */
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+/* Table Header */
+.statistics-mobile thead {
+    background-color: #eaf2fb; /* Light blue-gray for headers */
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 14px;
+    color: #333;
+}
+
+.statistics-mobile th {
+    padding: 12px;
+    text-align: center;
+    border-bottom: 1px solid #d0e4f4; /* Subtle border */
+}
+
+/* Table Rows */
+.statistics-mobile td {
+    padding: 5px;
+    text-align: center;
+    font-size: 14px;
+    color: #444;
+}
  
  /* Team Column */
  .team-column {
@@ -76,6 +109,27 @@
      font-weight: bold;
      color: #333;
  }
+
+  /* Alternating Row Colors */
+  .statistics-mobile tbody tr:nth-child(odd) {
+    background-color: #f9f9f9; /* Light gray for contrast */
+}
+
+.statistics-mobile tbody tr:nth-child(even) {
+    background-color: #ffffff; /* Pure white rows */
+}
+
+/* Hover Effect */
+.statistics-mobile tbody tr:hover {
+    background-color: #dfeeff; /* Subtle blue hover */
+    cursor: default;
+}
+
+/* Position Column */
+.statistics-mobile td:first-child {
+    font-weight: bold;
+    color: #333;
+}
 
  /* Loading Container */
 .loading-container {
@@ -176,4 +230,27 @@ table.statistics-table tr.highlight-row {
 /* Ensure normal text and logo colors are applied */
 table.statistics-table tr.highlight-row td {
     color: #333; /* Standard text color */
+}
+
+/* Add higher specificity */
+table.statistics-mobile tr.highlight-row {
+    background-color: #8dc6ff;
+    font-weight: bold; /* Optional */
+}
+
+/* Ensure normal text and logo colors are applied */
+table.statistics-mobile tr.highlight-row td {
+    color: #333; /* Standard text color */
+}
+
+@media (min-width: 769px) {
+    .statistics-mobile {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .statistics-table {
+        display: none;
+    }
 }

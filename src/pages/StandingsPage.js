@@ -5,6 +5,14 @@ import "./StandingsPage.css";
 const StandingsPage = () => {
     const [standingsInfo, setStandingsInfo] = useState([]);
     const [selectedLeague, setLeague] = useState("PD"); // Default to La Liga
+    const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+
+    // Handle screen resizing
+    useEffect(() => {
+        const handleResize = () => setIsMobile(window.innerWidth <= 768);
+        window.addEventListener("resize", handleResize);
+        return () => window.removeEventListener("resize", handleResize);
+    }, []);
 
     useEffect(() => {
         const getData = async () => {
@@ -44,47 +52,101 @@ const StandingsPage = () => {
                     >
                         UEFA Champions League
                     </button>
-                </div> 
+                </div>
             </div>
 
-            <table className="standings-table">
-                <thead>
-                    <tr>
-                        <th>Position</th>
-                        <th>Team</th>
-                        <th>Points</th>
-                        <th>Pl</th>
-                        <th>W</th>
-                        <th>D</th>
-                        <th>L</th>
-                        <th>GF</th>
-                        <th>GA</th>
-                        <th>GD</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {standingsInfo.map((team) => (
-                        <tr 
-                        key={team.team.id}
-                        className={team.team.name === "Real Madrid CF" ? "highlight-row" : ""}
-                        >
-                            <td>{team.position}</td>
-                            <td className="team-column">
-                                <img src={team.team.crest} alt={team.team.name} className="team-logo" />
-                                {team.team.name}
-                            </td>
-                            <td>{team.points}</td>
-                            <td>{team.playedGames}</td>
-                            <td>{team.won}</td>
-                            <td>{team.draw}</td>
-                            <td>{team.lost}</td>
-                            <td>{team.goalsFor}</td>
-                            <td>{team.goalsAgainst}</td>
-                            <td>{team.goalDifference > 0 ? `+${team.goalDifference}` : team.goalDifference}</td>
+            {/* Render Table */}
+            {!isMobile ? (
+                <table className="standings-table">
+                    <thead>
+                        <tr>
+                            <th>Position</th>
+                            <th>Team</th>
+                            <th>Points</th>
+                            <th>Pl</th>
+                            <th>W</th>
+                            <th>D</th>
+                            <th>L</th>
+                            <th>GF</th>
+                            <th>GA</th>
+                            <th>GD</th>
                         </tr>
-                    ))}
-                </tbody>
-            </table>
+                    </thead>
+                    <tbody>
+                        {standingsInfo.map((team) => (
+                            <tr
+                                key={team.team.id}
+                                className={team.team.name === "Real Madrid CF" ? "highlight-row" : ""}
+                            >
+                                <td>{team.position}</td>
+                                <td className="team-column">
+                                    <img
+                                        src={team.team.crest}
+                                        alt={team.team.name}
+                                        className="team-logo"
+                                    />
+                                    {team.team.name}
+                                </td>
+                                <td>{team.points}</td>
+                                <td>{team.playedGames}</td>
+                                <td>{team.won}</td>
+                                <td>{team.draw}</td>
+                                <td>{team.lost}</td>
+                                <td>{team.goalsFor}</td>
+                                <td>{team.goalsAgainst}</td>
+                                <td>
+                                    {team.goalDifference > 0
+                                        ? `+${team.goalDifference}`
+                                        : team.goalDifference}
+                                </td>
+                            </tr>
+                        ))}
+                    </tbody>
+                </table>
+            ) : (
+                <table className="standings-mobile">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>Team</th>
+                            <th>PTS</th>
+                            <th>Pl</th>
+                            <th>W</th>
+                            <th>D</th>
+                            <th>L</th>
+                            <th>GD</th>
+                        </tr> 
+                    </thead>
+                    <tbody>
+                        {standingsInfo.map((team) => (
+                            <tr
+                                key={team.team.id}
+                                className={team.team.name === "Real Madrid CF" ? "highlight-row" : ""}
+                            >
+                                <td>{team.position}</td>
+                                <td className="team-column">
+                                    <img
+                                        src={team.team.crest}
+                                        alt={team.team.name}
+                                        className="team-logo"
+                                    />
+                                    {team.team.tla}
+                                </td>
+                                <td>{team.points}</td>
+                                <td>{team.playedGames}</td>
+                                <td>{team.won}</td>
+                                <td>{team.draw}</td>
+                                <td>{team.lost}</td>
+                                <td>
+                                    {team.goalDifference > 0
+                                        ? `+${team.goalDifference}`
+                                        : team.goalDifference}
+                                </td>
+                            </tr>
+                        ))}
+                    </tbody>
+                </table>
+            )}
         </div>
     );
 };

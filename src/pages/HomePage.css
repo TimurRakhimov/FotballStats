@@ -10,7 +10,6 @@
  .hero-section {
      position: relative;
      text-align: center;
-     margin-bottom: 30px;
  }
  
  .hero-image {
@@ -30,7 +29,7 @@
  }
  
  .team-name {
-     font-size: 3rem;
+     font-size: 2rem;
      font-weight: bold;
      margin: 0;
  }
@@ -118,28 +117,39 @@
      display: grid;
      grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
      grid-template-rows: repeat(auto-fit, minmax(400px, 1fr)); /* Adjust column sizes */
-     gap: 20px; /* Add more spacing between items */
+     gap: 10px; /* Add more spacing between items */
      align-items: center;
  }
  
- .gallery-photo {
-     width: 100%; /* Full width of the grid column */
-     height: 400px; /* Consistent height */
-     object-fit: cover; /* Maintain aspect ratio while cropping */
-     border-radius: 10px;
-     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-     opacity: 0.9; /* Slight transparency for a soft effect */
-     transform: scale(1); /* Default scale */
-     transition: opacity calc(var(--rm-animation-delay-ms) * 2) ease-in-out,
-                 transform calc(var(--rm-animation-delay-ms) * 4) ease-in-out;
-     --rm-animation-delay-ms: 0.2s; /* Adjust animation delay */
- }
- 
- .gallery-photo:hover {
-     transform: scale(1.05); /* Slight zoom-in */
-     opacity: 1; /* Fully opaque on hover */
- }
- 
- 
+.gallery-photo {
+    width: 100%; /* Full width of the grid column */
+    height: 400px; /* Consistent height */
+    object-fit: cover; /* Maintain aspect ratio while cropping */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    opacity: 0.9; /* Slight transparency for a soft effect */
+    transform: scale(1); /* Default scale */
+    transition: opacity calc(var(--rm-animation-delay-ms) * 2) ease-in-out,
+                transform calc(var(--rm-animation-delay-ms) * 4) ease-in-out;
+    --rm-animation-delay-ms: 0.2s; /* Adjust animation delay */
+}
+
+.gallery-photo:hover {
+    transform: scale(1.05); /* Slight zoom-in */
+    opacity: 1; /* Fully opaque on hover */
+}
+
+@media (max-width: 768px) {
+    .photo-grid {
+        grid-template-columns: 1fr; /* Stack images in one column */
+        gap: 2rem; /* Consistent spacing between items */
+    }
+
+    .gallery-photo {
+        width: 100%; /* Full width for mobile */
+        height: auto; /* Maintain aspect ratio */
+        object-fit: cover;
+    }
+}
  
  

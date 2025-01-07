@@ -5,6 +5,14 @@ import "./StatisticsPage.css";
 const StatisticsPage = () => {
     const [statisticsInfo, setStatisticsInfo] = useState([]);
     const [selectedLeague, setLeague] = useState("PD"); // Default to La Liga
+    const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+    
+        // Handle screen resizing
+    useEffect(() => {
+        const handleResize = () => setIsMobile(window.innerWidth <= 768);
+        window.addEventListener("resize", handleResize);
+        return () => window.removeEventListener("resize", handleResize);
+    }, []);
 
     useEffect(() => {
         const getData = async () => {
@@ -46,6 +54,8 @@ const StatisticsPage = () => {
                     </button>
                 </div>
             </div>
+
+            {!isMobile ? ( 
             <table className="statistics-table">
                 <thead>
                     <tr>
@@ -68,7 +78,7 @@ const StatisticsPage = () => {
                             <td>{index + 1}</td>
                             <td className="team-column">
                                 <img src={player.team.crest} alt={player.team.name} className="team-logo" />
-                            </td>
+                            </td> 
                             <td>{player.player.name}</td>
                             <td>{player.playedMatches}</td>
                             <td>{player.goals}</td>
@@ -79,6 +89,41 @@ const StatisticsPage = () => {
                     ))}
                 </tbody>
             </table>
+            ) : (
+                <table className="statistics-mobile">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>Team</th>
+                        <th>Player</th>
+                        <th>M</th>
+                        <th>G</th>
+                        <th>A</th>
+                        <th>G/A</th>
+                        <th>PEN</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {statisticsInfo.map((player, index) => (
+                        <tr
+                            key={player.player.id}
+                            className={player.team.name === "Real Madrid CF" ? "highlight-row" : ""}
+                        >
+                            <td>{index + 1}</td>
+                            <td className="team-column">
+                                <img src={player.team.crest} alt={player.team.name} className="team-logo" />
+                            </td> 
+                            <td>{player.player.name}</td>
+                            <td>{player.playedMatches}</td>
+                            <td>{player.goals}</td>
+                            <td>{player.assists || 0}</td>
+                            <td>{player.goals + (player.assists || 0)}</td>
+                            <td>{player.penalties || 0}</td>
+                        </tr>
+                    ))}
+                </tbody>
+            </table>
+            )}
         </div>
     );
 };
