@@ -1,23 +1,25 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import "./Header.css";
+import { Link } from "react-router-dom";
 
 const Header = () => {
     return (
-        <header className="header">
-            <div className="logo">Real Madrid Stats</div>
-            <nav className="nav-links">
-                <ul>
-                    <li><Link to="/">Home</Link></li>
-                    <li><Link to="/players">Players</Link></li>
-                    <li><Link to="/standings">Standings</Link></li>
-                    <li><Link to="/fixtures">Fixtures</Link></li>
-                    <li><Link to="/statistics">Top Scorers</Link></li>
-                </ul>
-            </nav>
-            <a href="https://www.realmadrid.com/en-US">
-            <button className="cta-button">Official Website</button>
-            </a>
+        <header className="custom-header">
+            <div className="header-container">
+                <div className="header-left">
+                    <img src="og-image.png" alt="Team Logo" className="header-team-logo" />
+                    <h1 className="header-title">RM Stats</h1>
+                </div>
+                <nav className="header-nav">
+                    <ul className="nav-list">
+                        <li className="nav-item"><Link to="/" className="nav-link">Home</Link></li>
+                        <li className="nav-item"><Link to="/players" className="nav-link">Players</Link></li>
+                        <li className="nav-item"><Link to="/standings" className="nav-link">Standings</Link></li>
+                        <li className="nav-item"><Link to="/fixtures" className="nav-link">Fixtures</Link></li>
+                        <li className="nav-item"><Link to="/statistics" className="nav-link">Statistics</Link></li>
+                    </ul>
+                </nav>
+            </div>
         </header>
     );
 };
