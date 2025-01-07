@@ -6,7 +6,7 @@ const HomePage = () => {
         <div className="home-page">
             <div className="hero-section">
                 <img
-                    src="main.jpeg" // Placeholder for team photo
+                    src={`${process.env.PUBLIC_URL}/main.jpeg`} // Placeholder for team photo
                     alt="Real Madrid Stadium"
                     className="hero-image"
                 />
