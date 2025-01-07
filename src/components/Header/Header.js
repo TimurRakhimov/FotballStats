@@ -4,10 +4,10 @@ import { Link } from "react-router-dom";
 
 const Header = () => {
     return (
-        <header className="custom-header">
+        <header className="custom-header"> 
             <div className="header-container">
                 <div className="header-left">
-                    <img src="og-image.png" alt="Team Logo" className="header-team-logo" />
+                    <img src={`${process.env.PUBLIC_URL}/og-image.png`} alt="Team Logo" className="header-team-logo" />
                     <h1 className="header-title">RM Stats</h1>
                 </div>
                 <nav className="header-nav">
