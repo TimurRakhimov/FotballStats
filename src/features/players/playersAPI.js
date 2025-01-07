@@ -5,17 +5,17 @@ const endpoint = '/v3/teams/86';
 export const fetchPlayers = async () => {
     const cacheKey = 'team-86'; // Unique key for this request
 
-    // Check if data exists in cache
     if (cache[cacheKey]) {
         console.log("Using cached players data");
         return cache[cacheKey];
     }
 
     try {
-        const response = await fetch(`${baseURL}${endpoint}`, {
+        const url = `${baseURL}${endpoint}`; // Use full URL
+        const response = await fetch(url, {
             method: 'GET',
             headers: {
-                'X-Auth-Token': process.env.REACT_APP_API_KEY,
+                'X-Auth-Token': process.env.REACT_APP_API_KEY, // Pass API key in headers
             },
         });
 
@@ -25,7 +25,6 @@ export const fetchPlayers = async () => {
 
         const jsonResponse = await response.json();
         cache[cacheKey] = jsonResponse; // Store response in cache
-        console.log("Fetched players data from API");
         return jsonResponse;
     } catch (error) {
         console.error("Error fetching players:", error);
