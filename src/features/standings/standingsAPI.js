@@ -10,7 +10,7 @@ export const fetchStandings = async (leagueCode) => {
     }
 
     try {
-        const response = await fetch(`/api/v4/competitions/${leagueCode}/standings`, {
+        const response = await fetch(`https://cors-anywhere.herokuapp.com/https://api.football-data.org/v4/competitions/${leagueCode}/standings`, {
             method: 'GET',
             headers: {
                 'X-Auth-Token': process.env.REACT_APP_API_KEY,
