@@ -6,7 +6,7 @@ import "./App.css";
 
 const App = () => {
     return (
-        <Router>
+        <Router basename="/FotballStats">
             <div className="app-layout">
                 <Header />
                 <div className="content-wrapper">
