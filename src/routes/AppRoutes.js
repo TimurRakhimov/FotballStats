@@ -2,12 +2,9 @@ import React from "react";
 import { Routes, Route } from "react-router-dom";
 import HomePage from "../pages/HomePage";
 import PlayersPage from "../pages/PlayersPage";
-import TeamsPage from "../pages/TeamsPage";
 import FixturesPage from "../pages/FixturesPage";
-import CupsPage from "../pages/CupsPage";
-import NationalTeamsPage from "../pages/NationalTeamsPage";
-import CoachesPage from "../pages/CoachesPage";
 import StandingsPage from "../pages/StandingsPage";
+import StatisticsPage from "../pages/StatisticsPage";
 
 const AppRoutes = () => {
     return (
@@ -16,7 +13,7 @@ const AppRoutes = () => {
             <Route path="/players" element={<PlayersPage />} />
             <Route path="/standings" element={<StandingsPage />} />
             <Route path="/fixtures" element={<FixturesPage />} />
-            <Route path="/cups" element={<CupsPage />} />
+            <Route path="/statistics" element={<StatisticsPage />} />
         </Routes>
     );
 };
