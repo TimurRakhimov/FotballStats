@@ -1,4 +1,6 @@
 const cache = {}; // In-memory cache
+const baseURL = process.env.REACT_APP_API_BASE_URL || 'https://api.football-data.org';
+const endpoint = '/v3/teams/86';
 
 export const fetchPlayers = async () => {
     const cacheKey = 'team-86'; // Unique key for this request
@@ -10,7 +12,7 @@ export const fetchPlayers = async () => {
     }
 
     try {
-        const response = await fetch('/api/v3/teams/86', {
+        const response = await fetch(`${baseURL}${endpoint}`, {
             method: 'GET',
             headers: {
                 'X-Auth-Token': process.env.REACT_APP_API_KEY,
