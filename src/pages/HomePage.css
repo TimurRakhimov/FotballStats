@@ -1,0 +1,145 @@
+.home-page {
+     font-family: "Inter", sans-serif;
+     max-width: 1200px;
+     margin: 20px auto;
+     padding: 10px;
+     background-color: #ffffff;
+     border-radius: 10px;
+ }
+ 
+ .hero-section {
+     position: relative;
+     text-align: center;
+     margin-bottom: 30px;
+ }
+ 
+ .hero-image {
+     width: 100%;
+     height: auto;
+     border-radius: 10px;
+ }
+ 
+ .hero-text {
+     position: absolute;
+     top: 50%;
+     left: 50%;
+     transform: translate(-50%, -50%);
+     color: #fff;
+     text-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+     text-align: center;
+ }
+ 
+ .team-name {
+     font-size: 3rem;
+     font-weight: bold;
+     margin: 0;
+ }
+ 
+ .team-motto {
+     font-size: 1.2rem;
+     margin-top: 10px;
+ }
+ 
+ .content-section {
+     padding: 20px;
+ }
+ 
+ .facts-and-logo {
+     display: flex;
+     align-items: center;
+     justify-content: space-around;
+     margin-bottom: 40px;
+     flex-wrap: wrap;
+     gap: 20px;
+ }
+ 
+ .team-logo-container {
+     text-align: center;
+ }
+ 
+ .home-team-logo {
+     width: 240px;
+     height: 240px;
+     border-radius: 50%;
+     object-fit: cover; /* Ensures the logo fits without distortion */
+     transition: transform 0.3s ease-in-out;
+ }
+ 
+ 
+ .team-logo:hover {
+     transform: scale(1.1);
+ }
+ 
+ .facts-section {
+     max-width: 600px;
+ }
+ 
+ .facts-section h2 {
+     font-size: 1.8rem;
+     color: #212529;
+     margin-bottom: 15px;
+ }
+ 
+ .facts-section ul {
+     list-style-type: none;
+     padding-left: 0;
+     font-size: 1rem;
+     line-height: 1.6;
+     color: #495057;
+ }
+ 
+ .facts-section ul li {
+     position: relative;
+     padding-left: 20px;
+     margin-bottom: 10px;
+ }
+ 
+ .facts-section ul li::before {
+     content: "•";
+     color: #007bff;
+     font-weight: bold;
+     position: absolute;
+     left: 0;
+     top: 0;
+ }
+ 
+ .photo-gallery {
+     text-align: center;
+     margin-top: 30px;
+ }
+ 
+ .photo-gallery h2 {
+     font-size: 1.8rem;
+     color: #212529;
+     margin-bottom: 20px;
+ }
+ 
+ .photo-grid {
+     display: grid;
+     grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+     grid-template-rows: repeat(auto-fit, minmax(400px, 1fr)); /* Adjust column sizes */
+     gap: 20px; /* Add more spacing between items */
+     align-items: center;
+ }
+ 
+ .gallery-photo {
+     width: 100%; /* Full width of the grid column */
+     height: 400px; /* Consistent height */
+     object-fit: cover; /* Maintain aspect ratio while cropping */
+     border-radius: 10px;
+     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+     opacity: 0.9; /* Slight transparency for a soft effect */
+     transform: scale(1); /* Default scale */
+     transition: opacity calc(var(--rm-animation-delay-ms) * 2) ease-in-out,
+                 transform calc(var(--rm-animation-delay-ms) * 4) ease-in-out;
+     --rm-animation-delay-ms: 0.2s; /* Adjust animation delay */
+ }
+ 
+ .gallery-photo:hover {
+     transform: scale(1.05); /* Slight zoom-in */
+     opacity: 1; /* Fully opaque on hover */
+ }
+ 
+ 
+ 
+ 
