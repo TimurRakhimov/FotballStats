@@ -18,8 +18,8 @@
     "web-vitals": "^4.2.4"
   },
   "scripts": {
-    "start": "REACT_APP_API_KEY=c625dda22c0341c6b7ad3874162e1d37 react-scripts start",
-    "build": "REACT_APP_API_KEY=c625dda22c0341c6b7ad3874162e1d37 react-scripts build",
+    "start": "REACT_APP_API_BASE_URL=https://api.football-data.org REACT_APP_API_KEY=c625dda22c0341c6b7ad3874162e1d37 react-scripts start",
+    "build": "REACT_APP_API_BASE_URL=https://api.football-data.org REACT_APP_API_KEY=c625dda22c0341c6b7ad3874162e1d37 react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
