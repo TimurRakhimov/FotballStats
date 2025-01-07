@@ -19,7 +19,7 @@ const HomePage = () => {
                 <div className="facts-and-logo">
                     <div className="team-logo-container">
                         <img
-                            src="og-logo.jpeg" // Placeholder for team logo
+                            src={`${process.env.PUBLIC_URL}/og-logo.jpeg`} // Placeholder for team logo
                             alt="Team Logo"
                             className="home-team-logo"
                         />
@@ -38,22 +38,22 @@ const HomePage = () => {
                     <h2>Gallery</h2>
                     <div className="photo-grid">
                         <img
-                            src="cl1.avif"
+                            src={`${process.env.PUBLIC_URL}/cl1.avif`}
                             alt="Historical Moment 1"
                             className="gallery-photo"
                         />
                         <img
-                            src="cl2.jpg"
+                            src={`${process.env.PUBLIC_URL}/cl2.jpg`}
                             alt="Historical Moment 2"
                             className="gallery-photo"
                         />
                         <img
-                            src="cl3.jpeg"
+                            src={`${process.env.PUBLIC_URL}/cl3.jpeg`}
                             alt="Historical Moment 3"
                             className="gallery-photo"
                         />
                         <img
-                            src="cl4.jpg"
+                            src={`${process.env.PUBLIC_URL}/cl4.jpg`}
                             alt="Historical Moment 4"
                             className="gallery-photo"
                         />
