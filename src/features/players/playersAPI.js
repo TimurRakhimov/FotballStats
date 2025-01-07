@@ -13,7 +13,7 @@ export const fetchPlayers = async () => {
         const response = await fetch('/api/v3/teams/86', {
             method: 'GET',
             headers: {
-                'X-Auth-Token': 'c625dda22c0341c6b7ad3874162e1d37',
+                'X-Auth-Token': process.env.REACT_APP_API_KEY,
             },
         });
 

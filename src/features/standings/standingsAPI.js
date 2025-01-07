@@ -13,7 +13,7 @@ export const fetchStandings = async (leagueCode) => {
         const response = await fetch(`/api/v4/competitions/${leagueCode}/standings`, {
             method: 'GET',
             headers: {
-                'X-Auth-Token': 'c625dda22c0341c6b7ad3874162e1d37',
+                'X-Auth-Token': process.env.REACT_APP_API_KEY,
             },
         });
 
